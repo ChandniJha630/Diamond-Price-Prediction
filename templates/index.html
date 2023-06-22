@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diamond Information</title>
+</head>
+<style>
+    body{
+        background-color:black;
+    }
+    .a{
+        position: absolute;
+        left: 0;
+        width: 100%; /* Adjust the width as needed */
+        height: 100%; /* Adjust the height as needed */
+        background-color:black;
+        background-size:fit;
+        }
+    .b{
+    position: absolute;
+    right: 0;
+    width: 100%; /* Adjust the width as needed */
+    height: 100%; /* Adjust the height as needed */
+    background-color:black;
+ background-size:cover;
+   background-repeat:no-repeat;
+   display:none;
+    }
+    form{
+        display:block;
+        margin-left:25%;
+        margin-right:25%;
+        padding-top:2rem;
+        padding-bottom:2rem;
+        width:50%;
+        font-family:Sans-Serif;
+        font-size:12px;
+        border-style: inset;
+        border-width:1px;
+        border-radius:8px;
+    }
+    h1{
+        color:white;
+        font-family:Sans-Serif;
+        font-weight:100;
+        text-align:center;
+        margin:3rem;
+        font-size:42px;
+    }
+    h2{
+        color:white;
+        font-family:Sans-Serif;
+        font-weight:100; 
+        font-size:30px;
+       text-align:center;
+       margin:1rem;
+       
+    }
+    .image{
+        hieght: 400px;
+        width:50%;
+        margin-left:25%;
+        margin-right:25%;
+    }
+    .image2{
+        hieght: 200px;
+        width:26%;
+        margin-left:37%;
+        margin-right:37%;
+    }
+    label{
+        color:white;
+    }
+    select{
+       margin:0.5rem;
+        width:4rem;
+        height:2rem;
+        background-color: aquablue;
+        border-radius: 8px;
+        border-style:none;
+    }
+    Input{
+        margin:0.5rem;
+        width:3rem;
+        height:2rem;
+        background-color: aquablue;
+        border-radius: 8px;
+        border-style:none;
+    }
+    .line1,.line2,.line3{
+        display:inline-block;
+        width:60%;
+        margin-left:25%;
+        margin-right:25%;
+        
+    }
+    .submit{
+        width: 50%;
+        background-color:none;
+        border-radius: 8px;
+        border-style:none;
+        height:3rem;
+        margin-left:25%;
+        margin-right:25%;
+        margin-top:2rem;
+        color-white;
+    }
+    .submit:hover{
+        background-color:#D3D04F;
+    }
+    p{
+        color:white;
+    }
+    .navbar {
+        display:inline-block;
+        border-color:white;
+        border-style:inset;
+        border-radius:8px;
+        border-width:1px;
+        padding: 0.7rem;
+        margin-left:90%;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      
+      .navbar-toggle {
+        display: inline-block;
+        cursor: pointer;
+      }
+      
+      .icon-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: white;
+        margin-bottom: 4px;
+      }
+      
+      /* Animation for the hamburger icon */
+      .change .icon-bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      
+      .change .icon-bar:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .change .icon-bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+      
+</style>
+<body>
+    <nav class="navbar">
+        <span class="navbar-toggle" onclick="toggleNav()">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </span>
+        <!-- Other navbar content -->
+      </nav>
+    <div class="a">
+        <h1>Primond</h1>
+        <image class="image" src="https://t3.ftcdn.net/jpg/02/89/42/52/360_F_289425261_eriD4MyHsaQ9nh9R53wkTmVNoXzdCWqg.jpg"></image>
+
+    </div>
+    <div class="b">
+        
+        <h2>Price Calculator</h2>
+      <form action="{{url_for{'predict_datapoint'}}}" method="POST">
+        <div class="line1">
+        <label for="carat">Carat:</label>
+        <input type="number" step="0.01" id="carat" name="carat" required>
+        
+        <label for="depth">Depth:</label>
+        <input type="number" step="0.01" id="depth" name="depth" required>
+        
+        <label for="table">Table:</label>
+        <input type="number" step="0.01" id="table" name="table" required>
+        
+        </div><br><br>
+        <div class="line2">
+            <label for="x">X:</label>
+            <input type="number" step="0.01" id="x" name="x" required>
+            
+            <label for="y">Y:</label>
+            <input type="number" step="0.01" id="y" name="y" required>
+            
+            <label for="z">Z:</label>
+            <input type="number" step="0.01" id="z" name="z" required>
+            
+        </div>
+        <br><br>
+       <div class="line3">
+        <label for="cut">Cut:</label>
+        <select id="cut" name="cut" required>
+          <option value="Fair">Fair</option>
+          <option value="Good">Good</option>
+          <option value="Very Good">Very Good</option>
+          <option value="Premium">Premium</option>
+          <option value="Ideal">Ideal</option>
+        </select>
+        
+        <label for="color">Color:</label>
+        <select id="color" name="color" required>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+          <option value="H">H</option>
+          <option value="I">I</option>
+          <option value="J">J</option>
+        </select>
+     
+        <label for="clarity">Clarity:</label>
+        <select id="clarity" name="clarity" required>
+          <option value="I1">I1</option>
+          <option value="SI2">SI2</option>
+          <option value="SI1">SI1</option>
+          <option value="VS2">VS2</option>
+          <option value="VS1">VS1</option>
+          <option value="VVS2">VVS2</option>
+          <option value="VVS1">VVS1</option>
+          <option value="IF">IF</option>
+        </select>
+        
+       </div>
+       
+        <input type="submit" class="submit" value="Submit">
+      </form>
+      <h2>{{result}}</h2>
+      <image class="image2" src="https://t3.ftcdn.net/jpg/02/89/42/52/360_F_289425261_eriD4MyHsaQ9nh9R53wkTmVNoXzdCWqg.jpg"></image>
+    </div>
+<script>
+    function toggleNav() {
+        var navbarToggle = document.querySelector('.navbar-toggle');
+        navbarToggle.classList.toggle('change');
+        // Add code to show/hide your navigation menu here
+        var divA = document.querySelector('.a');
+        var divB = document.querySelector('.b');
+      
+        if (divA.style.display === 'block') {
+          divA.style.display = 'none';
+          divB.style.display = 'block';
+        } else {
+          divA.style.display = 'block';
+          divB.style.display = 'none';
+        }  
+    }
+</script>
+</body>
+</html>
