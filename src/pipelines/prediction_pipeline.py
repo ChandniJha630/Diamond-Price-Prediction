@@ -6,7 +6,7 @@ from src.utils import load_object
 import pandas as pd
 
 class PredictPipeline:
-    def __init__():
+    def __init__(self):
         pass
     def predict(self,feature):
         try:

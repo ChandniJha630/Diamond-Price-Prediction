@@ -1,7 +1,8 @@
 pandas
 numpy
 flask
-sklearn
 matplotlib
 seaborn
 scikit-learn
+setuptools
+typing

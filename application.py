@@ -23,7 +23,10 @@ def predict_datapoint():
         )
         final_new_data=data.get_data_as_dataframe()
         predict_pipeline=PredictPipeline()
-        pred=predict_pipeline.predict(final_new_data)
+        pred=predict_pipeline.predict(feature=final_new_data)
         
         result=round(pred[0],2)
-        return render_template  ('index.html',result=result)
+        final_ans= f"Cost of Your Diamond is  {result}"
+        return render_template  ('index.html',result=final_ans)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True)
