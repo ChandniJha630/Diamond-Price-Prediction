@@ -2,7 +2,7 @@
 
 Thanks to Kaggle for providing such a vast dataset. 
 
-This project aims at predicting price of diamond on basis of it's quality and size. Model has been trained using more than 1 lakh datapoints. And out of all regression model the best one for given dataset that is random forest classifier is selected by automated process. All the key factors like modularity, automation, pipelines, feature scaling, modelling of steps and readablity of code has been maintained throughout this project. 
+This project aims at predicting price of diamond on basis of American Gemstone Standards. Model has been trained using more than 1 lakh datapoints. And out of all regression model the best one for given dataset that is random forest classifier is selected by automated process. All the key factors like modularity, automation, pipelines, feature scaling, modelling of steps and readablity of code has been maintained throughout this project. 
 
 To run this project 
 
